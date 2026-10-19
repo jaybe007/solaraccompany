@@ -3,15 +3,48 @@
  */
 
 document.addEventListener('DOMContentLoaded', function () {
-  // 1. Mobile Sidebar Toggle
+  // 1. Mobile Sidebar Toggle & Backdrop
   const sidebarToggle = document.getElementById('adminSidebarToggle');
+  const sidebarClose = document.getElementById('adminSidebarClose');
+  const sidebarBackdrop = document.getElementById('adminSidebarBackdrop');
   const sidebar = document.getElementById('adminSidebar');
 
-  if (sidebarToggle && sidebar) {
-    sidebarToggle.addEventListener('click', function () {
-      sidebar.classList.toggle('open');
+  function openSidebar() {
+    if (sidebar) sidebar.classList.add('open');
+    if (sidebarBackdrop) sidebarBackdrop.classList.add('open');
+    document.body.classList.add('admin-sidebar-open');
+  }
+
+  function closeSidebar() {
+    if (sidebar) sidebar.classList.remove('open');
+    if (sidebarBackdrop) sidebarBackdrop.classList.remove('open');
+    document.body.classList.remove('admin-sidebar-open');
+  }
+
+  if (sidebarToggle) {
+    sidebarToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (sidebar && sidebar.classList.contains('open')) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
     });
   }
+
+  if (sidebarClose) {
+    sidebarClose.addEventListener('click', closeSidebar);
+  }
+
+  if (sidebarBackdrop) {
+    sidebarBackdrop.addEventListener('click', closeSidebar);
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeSidebar();
+    }
+  });
 
   // 2. Tab Navigation
   const tabLinks = document.querySelectorAll('.tab-link[data-tab]');

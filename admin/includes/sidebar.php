@@ -11,7 +11,10 @@ $unreadMsgCount = (int)Database::fetchColumn("SELECT COUNT(*) FROM `contact_mess
 <aside class="admin-sidebar" id="adminSidebar">
     <div class="admin-sidebar-brand">
         <?php $adminLogoUrl = setting('logo_light_url', setting('logo_url', 'assets/images/logo.png')); ?>
-        <img src="<?= upload_url($adminLogoUrl, 'assets/images/logo.png') ?>" alt="<?= e(setting('company_name', "SOLARAC Company LTD")) ?>" style="max-height: 42px; max-width: 190px; object-fit: contain;">
+        <img src="<?= upload_url($adminLogoUrl, 'assets/images/logo.png') ?>" alt="<?= e(setting('company_name', "SOLARAC Company LTD")) ?>" style="max-height: 42px; max-width: 180px; object-fit: contain;">
+        <button type="button" id="adminSidebarClose" class="admin-sidebar-close" aria-label="Close Sidebar Navigation">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
     </div>
 
     <div class="admin-user-profile">
