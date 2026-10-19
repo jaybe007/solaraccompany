@@ -1,15 +1,15 @@
 <?php
 /**
- * STONE ENERGY INT'L LTD - Legal Disclaimer
+ * SOLARAC Company LTD - Legal Disclaimer
  */
 require_once __DIR__ . '/config/config.php';
 
 $page = Database::fetchOne("SELECT * FROM `pages` WHERE `slug` = 'disclaimer' AND `status` = 'published' LIMIT 1");
 $title = $page['title'] ?? 'Legal Disclaimer';
-$content = $page['content'] ?? '<p>Disclaimer content is currently under legal review.</p>';
+$content = $page['content'] ?? '<p>Information and architectural project showcases presented on this portal are published by SOLARAC Company LTD (RC: 1175907) for informational, portfolio, and engineering procurement purposes. Actual engineering design parameters, geotechnical reports, and structural specifications are confirmed upon official project award and site survey.</p>';
 
-$pageTitle = ($page['meta_title'] ?? $title) . " | STONE ENERGY INT'L LTD";
-$pageDescription = $page['meta_description'] ?? "Official legal disclaimer for STONE ENERGY INT'L LTD.";
+$pageTitle = ($page['meta_title'] ?? $title) . " | SOLARAC Company LTD";
+$pageDescription = $page['meta_description'] ?? "Official legal disclaimer for SOLARAC Company LTD.";
 
 include INCLUDES_PATH . 'header.php';
 ?>

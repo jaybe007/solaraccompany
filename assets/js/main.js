@@ -117,4 +117,101 @@ document.addEventListener('DOMContentLoaded', function () {
       setTimeout(() => toast.remove(), 300);
     }, 4500);
   };
+
+  // 5. Hero Background Slideshow
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-slider-dot');
+  if (slides.length > 1) {
+    let currentSlide = 0;
+    let slideTimer = null;
+
+    function goToSlide(idx) {
+      slides[currentSlide].classList.remove('active');
+      if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
+      currentSlide = (idx + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+    }
+
+    function startAutoSlide() {
+      slideTimer = setInterval(() => {
+        goToSlide(currentSlide + 1);
+      }, 5500);
+    }
+
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        clearInterval(slideTimer);
+        goToSlide(idx);
+        startAutoSlide();
+      });
+    });
+
+    startAutoSlide();
+  }
+
+  // 6. Image Lightbox Modal
+  const lightboxModal = document.getElementById('globalLightboxModal');
+  const lightboxImg = document.getElementById('lightboxModalImg');
+  const lightboxTitle = document.getElementById('lightboxModalTitle');
+  const lightboxTriggers = document.querySelectorAll('[data-lightbox-img]');
+
+  if (lightboxModal && lightboxImg) {
+    lightboxTriggers.forEach(el => {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        const src = this.getAttribute('data-lightbox-img');
+        const title = this.getAttribute('data-lightbox-title') || 'Image Preview';
+        lightboxImg.src = src;
+        if (lightboxTitle) lightboxTitle.textContent = title;
+        lightboxModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    const closeBtn = lightboxModal.querySelector('.lightbox-close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        lightboxModal.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
+
+    lightboxModal.addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+        lightboxModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  // 7. General Filterable Items
+  const filterBtns = document.querySelectorAll('.filter-btn[data-filter]');
+  if (filterBtns.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.getAttribute('data-filter');
+        const items = document.querySelectorAll('.filter-item');
+        items.forEach(item => {
+          const cat = item.getAttribute('data-category');
+          if (filter === 'all' || cat === filter) {
+            item.style.display = '';
+            item.style.animation = 'fadeIn 0.35s ease-in-out';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
 });
+

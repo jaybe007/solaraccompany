@@ -1,16 +1,16 @@
 <?php
 /**
- * STONE ENERGY INT'L LTD - Public RFQ & Order Tracking Portal
+ * SOLARAC Company LTD - Public RFQ & Order Tracking Portal
  * Allows corporate clients and commercial partners to track procurement and quote statuses
  */
 require_once __DIR__ . '/config/config.php';
 
-$pageTitle = "Track RFQ & Tender Status | STONE ENERGY INT'L LTD";
-$pageDescription = "Track your Request for Quotation (RFQ), commercial tender proposal, and supply delivery progress in real-time with STONE ENERGY INT'L LTD.";
+$pageTitle = "Track Construction RFQ & Project Status | SOLARAC Company LTD";
+$pageDescription = "Track your Request for Quotation (RFQ), commercial tender proposal, and construction project progress in real-time with SOLARAC Company LTD.";
 
-$companyName = setting('company_name', "STONE ENERGY INT'L LTD");
-$phonePrimary = setting('phone_primary', '08037745881');
-$whatsappNum  = setting('whatsapp_number', '2348037745881');
+$companyName = setting('company_name', "SOLARAC Company LTD");
+$phonePrimary = setting('phone_primary', '08035188495');
+$whatsappNum  = setting('whatsapp_number', '2348035188495');
 
 $searchQuery = trim($_GET['rfq'] ?? $_POST['rfq_number'] ?? '');
 $searchEmail = trim($_POST['email'] ?? '');
@@ -36,7 +36,7 @@ if (!empty($searchQuery)) {
             $params[':email'] = $searchEmail;
         }
 
-        $rfqResult = Database::fetch($sql, $params);
+        $rfqResult = Database::fetchOne($sql, $params);
 
         if (!$rfqResult && !empty($searchEmail)) {
             $errorMessage = "No quotation found matching tracking ID '{$searchQueryClean}' with the specified email address. Please verify your details.";
@@ -236,11 +236,10 @@ include INCLUDES_PATH . 'header.php';
                     <div>
                         <span style="color: #64748b; font-size: 0.88rem;">Need immediate clarification or priority processing?</span>
                     </div>
-                    <div style="display: flex; gap: 12px;">
-                        <a href="https://wa.me/<?= e($whatsappNum) ?>?text=<?= urlencode("Hello Stone Energy Int'l, I am following up on RFQ Tracking: " . $rfqResult['rfq_number']) ?>" 
+                        <a href="https://wa.me/<?= e($whatsappNum) ?>?text=<?= urlencode("Hello SOLARAC Company LTD, I am following up on RFQ Tracking: " . $rfqResult['rfq_number']) ?>" 
                            target="_blank" rel="noopener" 
                            class="btn btn-outline-dark" style="font-size: 0.9rem;">
-                           WhatsApp Procurement &rarr;
+                           WhatsApp Technical Team &rarr;
                         </a>
                         <a href="tel:<?= e($phonePrimary) ?>" class="btn btn-primary" style="font-size: 0.9rem;">
                            Call Hotline (<?= e($phonePrimary) ?>)

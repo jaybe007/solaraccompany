@@ -1,15 +1,15 @@
 <?php
 /**
- * STONE ENERGY INT'L LTD - Terms & Conditions
+ * SOLARAC Company LTD - Terms & Conditions
  */
 require_once __DIR__ . '/config/config.php';
 
 $page = Database::fetchOne("SELECT * FROM `pages` WHERE `slug` = 'terms-and-conditions' AND `status` = 'published' LIMIT 1");
 $title = $page['title'] ?? 'Terms & Conditions';
-$content = $page['content'] ?? '<p>Terms and conditions content is currently under legal review.</p>';
+$content = $page['content'] ?? '<p>All civil engineering contracts, bill of quantities (BOQ) submissions, turnkey project awards, and material procurements with SOLARAC Company LTD (RC: 1175907) are governed by standard federal contracting standards and registered contractual agreements.</p>';
 
-$pageTitle = ($page['meta_title'] ?? $title) . " | STONE ENERGY INT'L LTD";
-$pageDescription = $page['meta_description'] ?? "Terms and conditions for commercial engagement with STONE ENERGY INT'L LTD.";
+$pageTitle = ($page['meta_title'] ?? $title) . " | SOLARAC Company LTD";
+$pageDescription = $page['meta_description'] ?? "Terms and conditions for engineering contracting engagement with SOLARAC Company LTD.";
 
 include INCLUDES_PATH . 'header.php';
 ?>

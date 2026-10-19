@@ -25,3 +25,7 @@ ehthumbs_vista.db
 .idea/
 *.sublime-project
 *.sublime-workspace
+
+# Scratch and archives
+scratch/
+*.zip

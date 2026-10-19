@@ -1,15 +1,15 @@
 <?php
 /**
- * STONE ENERGY INT'L LTD - Cookie Policy
+ * SOLARAC Company LTD - Cookie Policy
  */
 require_once __DIR__ . '/config/config.php';
 
 $page = Database::fetchOne("SELECT * FROM `pages` WHERE `slug` = 'cookie-policy' AND `status` = 'published' LIMIT 1");
 $title = $page['title'] ?? 'Cookie Policy';
-$content = $page['content'] ?? '<p>Cookie policy details are currently under review.</p>';
+$content = $page['content'] ?? '<p>SOLARAC Company LTD uses essential session cookies solely to facilitate navigation, inquiry form security (CSRF protection), and enhance your browsing experience on our corporate civil engineering portal.</p>';
 
-$pageTitle = ($page['meta_title'] ?? $title) . " | STONE ENERGY INT'L LTD";
-$pageDescription = $page['meta_description'] ?? "Official cookie policy for STONE ENERGY INT'L LTD website.";
+$pageTitle = ($page['meta_title'] ?? $title) . " | SOLARAC Company LTD";
+$pageDescription = $page['meta_description'] ?? "Official cookie policy for SOLARAC Company LTD website.";
 
 include INCLUDES_PATH . 'header.php';
 ?>

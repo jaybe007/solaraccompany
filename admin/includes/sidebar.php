@@ -1,6 +1,6 @@
 <?php
 /**
- * STONE ENERGY INT'L LTD - Reusable Admin Sidebar Navigation
+ * SOLARAC Company LTD - Reusable Admin Sidebar Navigation
  */
 $adminCurrentPage = basename($_SERVER['PHP_SELF'] ?? '');
 
@@ -10,8 +10,8 @@ $unreadMsgCount = (int)Database::fetchColumn("SELECT COUNT(*) FROM `contact_mess
 ?>
 <aside class="admin-sidebar" id="adminSidebar">
     <div class="admin-sidebar-brand">
-        <?php $adminLogoUrl = setting('logo_light_url', setting('logo_url', 'assets/images/logo-light.svg')); ?>
-        <img src="<?= upload_url($adminLogoUrl, 'assets/images/logo-light.svg') ?>" alt="<?= e(setting('company_name', "Stone Energy Int'l Ltd")) ?>" style="max-height: 42px; max-width: 190px; object-fit: contain;">
+        <?php $adminLogoUrl = setting('logo_light_url', setting('logo_url', 'assets/images/logo.png')); ?>
+        <img src="<?= upload_url($adminLogoUrl, 'assets/images/logo.png') ?>" alt="<?= e(setting('company_name', "SOLARAC Company LTD")) ?>" style="max-height: 42px; max-width: 190px; object-fit: contain;">
     </div>
 
     <div class="admin-user-profile">
@@ -57,7 +57,7 @@ $unreadMsgCount = (int)Database::fetchColumn("SELECT COUNT(*) FROM `contact_mess
         <?php endif; ?>
 
         <!-- Corporate Webmail -->
-        <a href="https://stoneenergyintl.com/webmail" target="_blank" rel="noopener" class="admin-nav-item" style="color: var(--color-accent-400);">
+        <a href="https://solaraccompany.com/webmail" target="_blank" rel="noopener" class="admin-nav-item" style="color: var(--color-accent-400);">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             <span>Corporate Webmail</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: auto; opacity: 0.6;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>

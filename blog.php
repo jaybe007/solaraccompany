@@ -1,6 +1,6 @@
 <?php
 /**
- * STONE ENERGY INT'L LTD - Blog & News System
+ * SOLARAC Company LTD - Engineering Insights, Case Studies & Technical Papers
  */
 require_once __DIR__ . '/config/config.php';
 
@@ -28,7 +28,7 @@ if (!empty($slug)) {
         exit;
     }
 
-    $pageTitle = $post['seo_title'] ?: ($post['title'] . " | STONE ENERGY INT'L LTD");
+    $pageTitle = $post['seo_title'] ?: ($post['title'] . " | SOLARAC Company LTD");
     $pageDescription = $post['seo_description'] ?: $post['excerpt'];
     $ogImage = upload_url($post['featured_image']);
 
@@ -48,7 +48,7 @@ if (!empty($slug)) {
         <div class="container" style="max-width: 900px;">
             <div class="breadcrumbs" style="margin-bottom: 12px; color: #94a3b8;">
                 <a href="<?= url('') ?>" style="color: #cbd5e1;">Home</a> &rarr; 
-                <a href="<?= url('blog.php') ?>" style="color: #cbd5e1;">Articles</a> &rarr; 
+                <a href="<?= url('blog.php') ?>" style="color: #cbd5e1;">Insights</a> &rarr; 
                 <span><?= e($post['title']) ?></span>
             </div>
             <span class="section-tag section-tag-light"><?= e($post['category_name']) ?></span>
@@ -110,8 +110,8 @@ if (!empty($slug)) {
 }
 
 // Blog Listing
-$pageTitle = "News, Contracting & Procurement Insights | STONE ENERGY INT'L LTD";
-$pageDescription = "Read the latest updates and industry perspectives on general contracting, hospital supplies, oil and gas logistics, and agroprocessing in Nigeria.";
+$pageTitle = "Engineering Insights, Case Studies & Tenders | SOLARAC Company LTD";
+$pageDescription = "Technical publications, civil engineering case studies, raft foundation practices, and turnkey infrastructure updates from SOLARAC Company LTD.";
 
 $categories = Database::fetchAll("SELECT * FROM `blog_categories` ORDER BY `id` ASC");
 
@@ -146,10 +146,10 @@ include INCLUDES_PATH . 'header.php';
 
 <div class="section-dark" style="padding: 60px 0; border-bottom: 3px solid var(--color-accent-500);">
     <div class="container">
-        <span class="section-tag section-tag-light">KNOWLEDGE &amp; MARKET INSIGHTS</span>
-        <h1 style="font-size: 2.8rem; color: #fff; margin-bottom: 12px;">News &amp; Industry Articles</h1>
+        <span class="section-tag section-tag-light">ENGINEERING &amp; CONSTRUCTION INSIGHTS</span>
+        <h1 style="font-size: 2.8rem; color: #fff; margin-bottom: 12px;">Articles &amp; Field Case Studies</h1>
         <p style="color: #cbd5e1; max-width: 720px; font-size: 1.1rem; margin-bottom: 0;">
-            Perspectives on general contracting, healthcare equipment standards, agricultural value chains, and industrial procurement in Nigeria.
+            Technical insights on raft foundations, fair-faced concrete fencing, institutional building designs, and turnkey project management across Nigeria.
         </p>
     </div>
 </div>

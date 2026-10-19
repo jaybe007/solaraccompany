@@ -1,17 +1,17 @@
 <?php
 /**
- * STONE ENERGY INT'L LTD - Main Navigation Menu
+ * SOLARAC Company LTD - Main Navigation Menu
  */
 $currentPage = basename($_SERVER['PHP_SELF'] ?? '');
 $navItems = [
     ['label' => 'Home', 'url' => url(''), 'file' => 'index.php'],
-    ['label' => 'About', 'url' => url('about.php'), 'file' => 'about.php'],
+    ['label' => 'About Us', 'url' => url('about.php'), 'file' => 'about.php'],
     ['label' => 'Services', 'url' => url('services.php'), 'file' => 'services.php'],
-    ['label' => 'Products', 'url' => url('products.php'), 'file' => 'products.php'],
     ['label' => 'Projects', 'url' => url('projects.php'), 'file' => 'projects.php'],
-    ['label' => 'Industries', 'url' => url('industries.php'), 'file' => 'industries.php'],
-    ['label' => 'News & Insights', 'url' => url('blog.php'), 'file' => 'blog.php'],
-    ['label' => 'Contact', 'url' => url('contact.php'), 'file' => 'contact.php'],
+    ['label' => 'Certificates', 'url' => url('certificates.php'), 'file' => 'certificates.php'],
+    ['label' => 'Meet The Team', 'url' => url('team.php'), 'file' => 'team.php'],
+    ['label' => 'Insights', 'url' => url('blog.php'), 'file' => 'blog.php'],
+    ['label' => 'Contact Us', 'url' => url('contact.php'), 'file' => 'contact.php'],
 ];
 ?>
 <ul class="nav-menu" id="navMenu">

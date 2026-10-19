@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$companyName = setting('company_name', "STONE ENERGY INT'L LTD");
+$companyName = setting('company_name', "SOLARAC Company LTD");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,11 +45,11 @@ $companyName = setting('company_name', "STONE ENERGY INT'L LTD");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Portal Login | <?= e($companyName) ?></title>
-    <link rel="icon" type="image/svg+xml" href="<?= asset('images/favicon.svg') ?>">
+    <link rel="icon" type="image/png" href="<?= asset('images/logo.png') ?>">
     <link rel="stylesheet" href="<?= asset('css/admin.css') ?>">
     <style>
         body.login-body {
-            background: radial-gradient(circle at 50% 10%, #1e3a8a 0%, #0a192f 60%, #050c18 100%);
+            background: radial-gradient(circle at 50% 10%, #0e2d22 0%, #081d15 60%, #04100c 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;

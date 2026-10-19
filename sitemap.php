@@ -1,6 +1,6 @@
 <?php
 /**
- * STONE ENERGY INT'L LTD - Dynamic XML Sitemap Generator
+ * SOLARAC Company LTD - Dynamic XML Sitemap Generator
  * Outputs valid XML conforming to Sitemaps.org standard
  */
 require_once __DIR__ . '/config/config.php';
@@ -11,14 +11,15 @@ $baseUrl = rtrim(BASE_URL, '/') . '/';
 
 $staticPages = [
     ['loc' => '', 'freq' => 'weekly', 'prio' => '1.0'],
-    ['loc' => 'about.php', 'freq' => 'monthly', 'prio' => '0.8'],
+    ['loc' => 'about.php', 'freq' => 'monthly', 'prio' => '0.85'],
     ['loc' => 'services.php', 'freq' => 'weekly', 'prio' => '0.9'],
-    ['loc' => 'products.php', 'freq' => 'weekly', 'prio' => '0.9'],
-    ['loc' => 'projects.php', 'freq' => 'weekly', 'prio' => '0.85'],
-    ['loc' => 'industries.php', 'freq' => 'monthly', 'prio' => '0.8'],
-    ['loc' => 'quote.php', 'freq' => 'monthly', 'prio' => '0.8'],
-    ['loc' => 'contact.php', 'freq' => 'monthly', 'prio' => '0.7'],
+    ['loc' => 'projects.php', 'freq' => 'weekly', 'prio' => '0.9'],
+    ['loc' => 'certificates.php', 'freq' => 'monthly', 'prio' => '0.85'],
+    ['loc' => 'team.php', 'freq' => 'monthly', 'prio' => '0.8'],
+    ['loc' => 'quote.php', 'freq' => 'monthly', 'prio' => '0.85'],
+    ['loc' => 'contact.php', 'freq' => 'monthly', 'prio' => '0.75'],
     ['loc' => 'blog.php', 'freq' => 'weekly', 'prio' => '0.8'],
+    ['loc' => 'track.php', 'freq' => 'monthly', 'prio' => '0.7'],
     ['loc' => 'privacy.php', 'freq' => 'yearly', 'prio' => '0.3'],
     ['loc' => 'terms.php', 'freq' => 'yearly', 'prio' => '0.3'],
     ['loc' => 'cookie-policy.php', 'freq' => 'yearly', 'prio' => '0.3'],

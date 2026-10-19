@@ -1,6 +1,6 @@
 <?php
 /**
- * STONE ENERGY INT'L LTD - Global Site Search
+ * SOLARAC Company LTD - Global Site Search
  */
 require_once __DIR__ . '/config/config.php';
 
@@ -51,8 +51,8 @@ if (!empty($query)) {
     );
 }
 
-$pageTitle = "Search Results" . (!empty($query) ? " for '{$query}'" : "") . " | STONE ENERGY INT'L LTD";
-$pageDescription = "Find corporate services, products, civil projects, and procurement information.";
+$pageTitle = "Search Results" . (!empty($query) ? " for '{$query}'" : "") . " | SOLARAC Company LTD";
+$pageDescription = "Find corporate civil engineering services, landmark projects, tenders, and technical insight information.";
 
 include INCLUDES_PATH . 'header.php';
 ?>

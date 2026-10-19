@@ -6,12 +6,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
 
 :root {
-  --admin-sidebar-bg: #0a192f;
-  --admin-sidebar-active: #172a45;
+  --admin-sidebar-bg: #071938;
+  --admin-sidebar-active: #0c244d;
   --admin-sidebar-text: #94a3b8;
   --admin-sidebar-hover: #ffffff;
-  --admin-accent: #d97706;
-  --admin-accent-hover: #b45309;
+  --admin-accent: #0066ff;
+  --admin-accent-hover: #0052cc;
   --admin-topbar-bg: #ffffff;
   --admin-body-bg: #f8fafc;
   --admin-card-bg: #ffffff;
@@ -151,7 +151,7 @@ body.admin-body {
 }
 
 .admin-nav-item.active {
-  background-color: rgba(217, 119, 6, 0.15);
+  background-color: rgba(0, 102, 255, 0.15);
   color: #fbbf24;
   font-weight: 600;
   border-left: 3px solid var(--admin-accent);
@@ -294,7 +294,7 @@ body.admin-body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(217, 119, 6, 0.1);
+  background: rgba(0, 102, 255, 0.1);
   color: var(--admin-accent);
 }
 
@@ -463,7 +463,7 @@ body.admin-body {
 .form-control-admin:focus {
   border-color: var(--admin-accent);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.15);
 }
 
 /* Media Library Cards */

@@ -11,8 +11,8 @@ class Mailer {
      * Send email using configured SMTP or standard PHP mail
      */
     public static function send(string $toEmail, string $toName, string $subject, string $htmlBody, string $textBody = ''): bool {
-        $fromEmail = setting('smtp_from_email', env('MAIL_FROM_ADDRESS', 'noreply@stoneenergyintl.com'));
-        $fromName  = setting('smtp_from_name', env('MAIL_FROM_NAME', "STONE ENERGY INT'L LTD"));
+        $fromEmail = setting('smtp_from_email', env('MAIL_FROM_ADDRESS', 'info@solaraccompany.com'));
+        $fromName  = setting('smtp_from_name', env('MAIL_FROM_NAME', "SOLARAC Company LTD"));
         $smtpEnabled = Settings::getBool('smtp_enabled', false);
 
         if (empty($textBody)) {
@@ -129,9 +129,9 @@ class Mailer {
      * Wrap email content in a high-end corporate template
      */
     private static function wrapTemplate(string $title, string $body): string {
-        $company = setting('company_name', "STONE ENERGY INT'L LTD");
-        $address = setting('office_address', "22, Oyelude Layout, Aba Alfa, Ojo, Ibadan, Oyo State, Nigeria.");
-        $phones  = setting('phone_primary', '08037745881') . ' / ' . setting('phone_secondary', '08084949840');
+        $company = setting('company_name', "SOLARAC Company LTD");
+        $address = setting('office_address', "No 48, Baruwa Street, Opposite Old Governor's Office, Osogbo, Osun State, Nigeria.");
+        $phones  = setting('phone_primary', '08035188495') . ' / ' . setting('phone_secondary', '08065833345');
         $siteUrl = BASE_URL;
 
         return <<<HTML
@@ -140,31 +140,31 @@ class Mailer {
 <head>
 <meta charset="utf-8">
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f1f5f9; margin: 0; padding: 24px; color: #1e293b; }
-  .email-wrapper { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; }
-  .email-header { background: #0a192f; padding: 28px 32px; text-align: center; border-bottom: 4px solid #d97706; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f7faf9; margin: 0; padding: 24px; color: #111d18; }
+  .email-wrapper { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(8,29,21,0.06); border: 1px solid #e2e8e5; }
+  .email-header { background: #081d15; padding: 28px 32px; text-align: center; border-bottom: 4px solid #059669; }
   .email-header h1 { color: #ffffff; margin: 0; font-size: 20px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
-  .email-header p { color: #94a3b8; margin: 4px 0 0; font-size: 12px; letter-spacing: 1px; }
+  .email-header p { color: #d97706; margin: 4px 0 0; font-size: 12px; letter-spacing: 1px; font-weight: 600; }
   .email-body { padding: 32px; font-size: 15px; line-height: 1.6; }
-  .email-body h2 { color: #0a192f; margin-top: 0; font-size: 18px; }
-  .badge { display: inline-block; padding: 4px 10px; font-size: 12px; font-weight: 600; border-radius: 4px; background: #fef3c7; color: #92400e; }
-  .info-box { background: #f8fafc; border-left: 4px solid #d97706; padding: 14px 18px; margin: 20px 0; border-radius: 0 6px 6px 0; }
-  .footer { background: #f8fafc; padding: 20px 32px; text-align: center; font-size: 12px; color: #64748b; border-top: 1px solid #e2e8f0; }
-  .btn { display: inline-block; background: #d97706; color: #ffffff !important; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; margin-top: 15px; }
+  .email-body h2 { color: #081d15; margin-top: 0; font-size: 18px; }
+  .badge { display: inline-block; padding: 4px 10px; font-size: 12px; font-weight: 600; border-radius: 4px; background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+  .info-box { background: #f0fdf4; border-left: 4px solid #059669; padding: 14px 18px; margin: 20px 0; border-radius: 0 6px 6px 0; }
+  .footer { background: #f8faf9; padding: 20px 32px; text-align: center; font-size: 12px; color: #73887e; border-top: 1px solid #e2e8e5; }
+  .btn { display: inline-block; background: linear-gradient(135deg, #047857, #10b981); color: #ffffff !important; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; margin-top: 15px; }
 </style>
 </head>
 <body>
 <div class="email-wrapper">
   <div class="email-header">
     <h1>{$company}</h1>
-    <p>GENERAL CONTRACTOR & MULTI-SECTOR SUPPLY SOLUTIONS</p>
+    <p>CIVIL ENGINEERING, BUILDING CONSTRUCTION & PROJECT MANAGEMENT</p>
   </div>
   <div class="email-body">
     {$body}
   </div>
   <div class="footer">
-    <p><strong>{$company}</strong><br>{$address}<br>Tel: {$phones}</p>
-    <p><a href="{$siteUrl}" style="color: #d97706; text-decoration: none;">Visit Official Website</a></p>
+    <p><strong>{$company}</strong> (RC: 1175907)<br>{$address}<br>Tel: {$phones}</p>
+    <p><a href="{$siteUrl}" style="color: #059669; text-decoration: none; font-weight: 600;">Visit Official Portal</a></p>
   </div>
 </div>
 </body>
@@ -176,19 +176,19 @@ HTML;
      * Send RFQ Customer Confirmation
      */
     public static function sendRfqCustomerNotice(array $rfq): bool {
-        $subject = "RFQ Received: {$rfq['rfq_number']} - " . setting('company_name', "STONE ENERGY INT'L LTD");
+        $subject = "RFQ Received: {$rfq['rfq_number']} - " . setting('company_name', "SOLARAC Company LTD");
         $body = "
         <h2>Request for Quotation Acknowledgment</h2>
         <p>Dear <strong>" . e($rfq['customer_name']) . "</strong>,</p>
-        <p>Thank you for reaching out to <strong>" . e(setting('company_name', "STONE ENERGY INT'L LTD")) . "</strong>. We have received your formal request for quotation.</p>
+        <p>Thank you for reaching out to <strong>" . e(setting('company_name', "SOLARAC Company LTD")) . "</strong>. We have received your formal request for quotation.</p>
         <div class='info-box'>
             <p><strong>Tracking Number:</strong> <span class='badge'>" . e($rfq['rfq_number']) . "</span></p>
             <p><strong>Requirement:</strong> " . e($rfq['service_or_product']) . "</p>
-            <p><strong>Industry:</strong> " . e($rfq['industry']) . "</p>
-            <p><strong>Status:</strong> NEW / UNDER REVIEW</p>
+            <p><strong>Discipline:</strong> " . e($rfq['industry']) . "</p>
+            <p><strong>Status:</strong> NEW / UNDER TECHNICAL REVIEW</p>
         </div>
-        <p>Our procurement and commercial technical team is currently reviewing your project specifications. A representative will contact you with a formal quotation or follow-up technical inquiry.</p>
-        <p>If you have urgent documents or adjustments, please reply to this email or call our hotlines.</p>
+        <p>Our engineering and quantity surveying technical team is currently reviewing your project specifications. A representative will contact you with a formal quotation or follow-up site assessment schedule.</p>
+        <p>If you have urgent architectural drawings or adjustments, please reply to this email or call our Osogbo head office hotlines.</p>
         ";
         return self::send($rfq['email'], $rfq['customer_name'], $subject, $body);
     }
@@ -197,24 +197,24 @@ HTML;
      * Send RFQ Admin Alert
      */
     public static function sendRfqAdminAlert(array $rfq): bool {
-        $adminEmail = setting('email_primary', env('MAIL_FROM_ADDRESS', 'admin@stoneenergyintl.com'));
+        $adminEmail = setting('email_primary', env('MAIL_FROM_ADDRESS', 'admin@solaraccompany.com'));
         if ($adminEmail === '[ADD COMPANY EMAIL]' || empty($adminEmail)) {
-            $adminEmail = 'admin@stoneenergyintl.com';
+            $adminEmail = 'admin@solaraccompany.com';
         }
 
         $subject = "NEW RFQ SUBMISSION: {$rfq['rfq_number']} from " . ($rfq['company_name'] ?: $rfq['customer_name']);
         $body = "
-        <h2>New Request for Quotation Submitted</h2>
-        <p>A new RFQ has been submitted via the website portal.</p>
+        <h2>New Project RFQ / Tender Submitted</h2>
+        <p>A new engineering RFQ has been submitted via the website portal.</p>
         <div class='info-box'>
             <p><strong>RFQ Number:</strong> " . e($rfq['rfq_number']) . "</p>
             <p><strong>Client:</strong> " . e($rfq['customer_name']) . " (" . e($rfq['company_name'] ?? 'N/A') . ")</p>
             <p><strong>Phone:</strong> " . e($rfq['phone']) . " | <strong>Email:</strong> " . e($rfq['email']) . "</p>
-            <p><strong>Industry:</strong> " . e($rfq['industry']) . "</p>
+            <p><strong>Discipline:</strong> " . e($rfq['industry']) . "</p>
             <p><strong>Scope / Item:</strong> " . e($rfq['service_or_product']) . "</p>
-            <p><strong>Quantity:</strong> " . e($rfq['quantity'] ?? 'N/A') . "</p>
-            <p><strong>Location:</strong> " . e($rfq['project_location'] ?? 'N/A') . "</p>
-            <p><strong>Required Date:</strong> " . e($rfq['required_delivery_date'] ?? 'N/A') . "</p>
+            <p><strong>Quantity / Volume:</strong> " . e($rfq['quantity'] ?? 'N/A') . "</p>
+            <p><strong>Site Location:</strong> " . e($rfq['project_location'] ?? 'N/A') . "</p>
+            <p><strong>Required Completion:</strong> " . e($rfq['required_delivery_date'] ?? 'N/A') . "</p>
         </div>
         <p><strong>Project Description:</strong><br>" . nl2br(e($rfq['project_description'])) . "</p>
         <p><a href='" . admin_url('rfq-view.php?id=' . $rfq['id']) . "' class='btn'>Review in Admin Dashboard</a></p>
@@ -228,13 +228,13 @@ HTML;
     public static function sendRfqStatusUpdate(array $rfq, string $newStatus, string $comment = ''): bool {
         $subject = "RFQ Status Update: {$rfq['rfq_number']} - {$newStatus}";
         $body = "
-        <h2>Update on Your Request for Quotation</h2>
+        <h2>Update on Your Project Quotation</h2>
         <p>Dear <strong>" . e($rfq['customer_name']) . "</strong>,</p>
         <p>The status of your Request for Quotation (<strong>" . e($rfq['rfq_number']) . "</strong>) has been updated.</p>
         <div class='info-box'>
             <p><strong>Current Status:</strong> <span class='badge'>" . e($newStatus) . "</span></p>
             <p><strong>Requirement:</strong> " . e($rfq['service_or_product']) . "</p>
-            " . (!empty($comment) ? "<p><strong>Procurement Notes:</strong> " . nl2br(e($comment)) . "</p>" : "") . "
+            " . (!empty($comment) ? "<p><strong>Technical Notes:</strong> " . nl2br(e($comment)) . "</p>" : "") . "
         </div>
         <p>For immediate clarifications, please contact our team via phone or WhatsApp.</p>
         ";
@@ -245,9 +245,9 @@ HTML;
      * Send Contact Form Admin Notification
      */
     public static function sendContactAdminAlert(array $contact): bool {
-        $adminEmail = setting('email_primary', env('MAIL_FROM_ADDRESS', 'admin@stoneenergyintl.com'));
+        $adminEmail = setting('email_primary', env('MAIL_FROM_ADDRESS', 'admin@solaraccompany.com'));
         if ($adminEmail === '[ADD COMPANY EMAIL]' || empty($adminEmail)) {
-            $adminEmail = 'admin@stoneenergyintl.com';
+            $adminEmail = 'admin@solaraccompany.com';
         }
 
         $subject = "New Contact Inquiry: " . $contact['subject'];
@@ -270,10 +270,10 @@ HTML;
      */
     public static function sendPasswordReset(string $email, string $rawToken): bool {
         $resetUrl = admin_url('reset-password.php?token=' . urlencode($rawToken));
-        $subject = "Password Reset Request - " . setting('company_name', "STONE ENERGY INT'L LTD");
+        $subject = "Password Reset Request - " . setting('company_name', "SOLARAC Company LTD");
         $body = "
         <h2>Administrative Password Reset</h2>
-        <p>We received a request to reset your password for the STONE ENERGY INT'L LTD administration portal.</p>
+        <p>We received a request to reset your password for the SOLARAC Company LTD administration portal.</p>
         <p>Click the secure link below to reset your password. This link will expire in 60 minutes.</p>
         <p><a href='{$resetUrl}' class='btn'>Reset Password</a></p>
         <p>Or paste this URL into your browser:<br><small>{$resetUrl}</small></p>
