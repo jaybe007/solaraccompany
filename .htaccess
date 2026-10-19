@@ -2,13 +2,12 @@
 # STONE ENERGY INT'L LTD - Apache Configuration & Security Hardening
 # =====================================================================
 
-# Disable Directory Browsing
-Options -Indexes
+# Disable Directory Browsing (Wrap in check or comment out if host disallows Options override)
+<IfModule mod_autoindex.c>
+    IndexIgnore *
+</IfModule>
 
-# Follow Symbolic Links
-Options +FollowSymLinks
-
-# Rewrite Engine & Dynamic Feeds
+# URL Rewriting & Sitemaps
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteRule ^sitemap\.xml$ sitemap.php [L]
