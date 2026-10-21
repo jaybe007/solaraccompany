@@ -117,9 +117,9 @@ include INCLUDES_PATH . 'header.php';
 
             <!-- 5. Ajibade Taofeek Oladayo -->
             <div class="team-card" style="grid-column: 1 / -1;">
-                <div style="display: grid; grid-template-columns: 200px 1fr; gap: 30px; align-items: center;">
+                <div class="team-specialist-layout">
                     <div style="text-align: center; background: #f8fafc; border: 1px solid var(--color-gray-200); border-radius: 12px; padding: 12px; cursor: pointer;" data-lightbox-img="<?= asset('images/certificates/TAOFEEK-CERT.png') ?>" data-lightbox-title="Federal Ministry of Labour - Painting & Decorating Trade Certificate">
-                        <img src="<?= asset('images/certificates/TAOFEEK-CERT.png') ?>" alt="Trade Test Certificate" style="max-width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+                        <img src="<?= asset('images/certificates/TAOFEEK-CERT.png') ?>" alt="Trade Test Certificate" style="max-width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto; border-radius: 6px;">
                         <span style="font-size: 0.72rem; color: var(--color-accent-600); font-weight: 700; margin-top: 6px; display: block;">Click to Zoom Certificate</span>
                     </div>
                     <div>
@@ -135,6 +135,40 @@ include INCLUDES_PATH . 'header.php';
                         <ul class="team-meta-list">
                             <li><strong>Expertise:</strong> Surface preparation, priming, decorative coatings, protective anti-weathering finishes</li>
                             <li><strong>Certification:</strong> Painting &amp; Decorating Certificate &mdash; Federal Ministry of Labour and Employment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Afolabi Titilope Busayo -->
+            <div class="team-card" style="grid-column: 1 / -1;">
+                <div class="team-specialist-layout">
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <!-- Certificate 1: Federal Ministry of Labour and Productivity (2017) -->
+                        <div style="text-align: center; background: #f8fafc; border: 1px solid var(--color-gray-200); border-radius: 12px; padding: 10px; cursor: pointer; transition: all 0.2s ease;" data-lightbox-img="<?= asset('images/certificates/AFOLABI-LABOUR-CERT.png') ?>" data-lightbox-title="Federal Ministry of Labour &amp; Productivity - Carpenter &amp; Joiner Trade Test Certificate III (Issued 2017)">
+                            <img src="<?= asset('images/certificates/AFOLABI-LABOUR-CERT.png') ?>" alt="Trade Test Certificate III (2017)" style="max-width: 100%; height: 85px; object-fit: contain; display: block; margin: 0 auto; border-radius: 6px;">
+                            <span style="font-size: 0.7rem; color: var(--color-accent-600); font-weight: 700; margin-top: 4px; display: block;">Federal Labour Cert III (2017)</span>
+                        </div>
+                        <!-- Certificate 2: Federal Science and Technical College Yaba Lagos (2020) -->
+                        <div style="text-align: center; background: #f8fafc; border: 1px solid var(--color-gray-200); border-radius: 12px; padding: 10px; cursor: pointer; transition: all 0.2s ease;" data-lightbox-img="<?= asset('images/certificates/AFOLABI-FSTC-CERT.png') ?>" data-lightbox-title="Federal Science and Technical College (FSTC) Yaba Lagos - Certificate III in Carpentry &amp; Joinery (Issued 2020)">
+                            <img src="<?= asset('images/certificates/AFOLABI-FSTC-CERT.png') ?>" alt="FSTC Yaba Lagos Certificate III (2020)" style="max-width: 100%; height: 85px; object-fit: contain; display: block; margin: 0 auto; border-radius: 6px;">
+                            <span style="font-size: 0.7rem; color: var(--color-accent-600); font-weight: 700; margin-top: 4px; display: block;">FSTC Yaba Lagos Cert III (2020)</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="team-header" style="margin-bottom: 12px;">
+                            <div class="team-title-wrap">
+                                <h3>Afolabi Titilope Busayo</h3>
+                                <span class="team-role-tag">Certified Carpenter &amp; Joiner Specialist</span>
+                            </div>
+                        </div>
+                        <p class="team-bio">
+                            Afolabi is a certified carpentry and joinery craftsman with extensive technical expertise in structural timber formwork, precision architectural joinery, reinforced concrete shuttering, and bespoke roof truss systems for heavy civil structures and modern architectural developments.
+                        </p>
+                        <ul class="team-meta-list">
+                            <li><strong>Expertise:</strong> Structural timber framing, formwork &amp; falsework assembly, roof trusses, architectural woodwork, joinery &amp; cabinetry</li>
+                            <li><strong>Certification 1:</strong> Trade Test Certificate Class III (Carpenter &amp; Joiner) &mdash; Federal Ministry of Labour and Productivity (Issued 2017)</li>
+                            <li><strong>Certification 2:</strong> Certificate III in Carpentry &amp; Joinery &mdash; Federal Science and Technical College (FSTC), Yaba, Lagos (Issued 2020)</li>
                         </ul>
                     </div>
                 </div>

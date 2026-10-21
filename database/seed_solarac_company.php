@@ -371,6 +371,13 @@ try {
             'bio' => 'Ajibade is a skilled painting and protective coating specialist with meticulous attention to detail, delivering durable, elegant surface finishes for commercial, institutional, and luxury residential projects.',
             'image' => 'assets/images/certificates/TAOFEEK-CERT.png',
             'sort_order' => 5
+        ],
+        [
+            'name' => 'Afolabi Titilope Busayo',
+            'position' => 'Certified Carpenter & Joiner Specialist (Fed Ministry of Labour & FSTC Yaba)',
+            'bio' => 'Afolabi is a certified carpentry and joinery craftsman with extensive technical expertise in structural timber formwork, precision architectural joinery, reinforced concrete shuttering, and bespoke roof truss systems for civil engineering and modern building projects.',
+            'image' => 'assets/images/certificates/AFOLABI-LABOUR-CERT.png',
+            'sort_order' => 6
         ]
     ];
 
