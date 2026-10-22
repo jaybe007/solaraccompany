@@ -375,7 +375,7 @@ try {
         [
             'name' => 'Afolabi Titilope Busayo',
             'position' => 'Certified Carpenter & Joiner Specialist (Fed Ministry of Labour & FSTC Yaba)',
-            'bio' => 'Afolabi is a certified carpentry and joinery craftsman with extensive technical expertise in structural timber formwork, precision architectural joinery, reinforced concrete shuttering, and bespoke roof truss systems for civil engineering and modern building projects.',
+            'bio' => 'Afolabi is a certified carpentry and joinery craftswoman with extensive technical expertise in structural timber formwork, precision architectural joinery, reinforced concrete shuttering, and bespoke roof truss systems for civil engineering and modern building projects.',
             'image' => 'assets/images/certificates/AFOLABI-LABOUR-CERT.png',
             'sort_order' => 6
         ]

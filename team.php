@@ -163,7 +163,7 @@ include INCLUDES_PATH . 'header.php';
                             </div>
                         </div>
                         <p class="team-bio">
-                            Afolabi is a certified carpentry and joinery craftsman with extensive technical expertise in structural timber formwork, precision architectural joinery, reinforced concrete shuttering, and bespoke roof truss systems for heavy civil structures and modern architectural developments.
+                            Afolabi is a certified carpentry and joinery craftswoman with extensive technical expertise in structural timber formwork, precision architectural joinery, reinforced concrete shuttering, and bespoke roof truss systems for heavy civil structures and modern architectural developments.
                         </p>
                         <ul class="team-meta-list">
                             <li><strong>Expertise:</strong> Structural timber framing, formwork &amp; falsework assembly, roof trusses, architectural woodwork, joinery &amp; cabinetry</li>
